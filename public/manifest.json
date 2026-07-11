@@ -1,0 +1,9 @@
+{
+  "name": "小晴 × Claude",
+  "short_name": "Claude",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d2b",
+  "theme_color": "#0d0d2b",
+  "icons": []
+}
