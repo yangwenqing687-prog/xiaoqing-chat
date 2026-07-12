@@ -2,49 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 
-html, body {
+html {
   height: 100%;
   overflow: hidden;
+  touch-action: manipulation;
 }
 
 body {
+  height: 100%;
+  overflow: hidden;
   font-family: -apple-system, "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 @supports (height: 100dvh) {
   html, body { height: 100dvh; }
 }
 
+input, button, textarea {
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+
 input::placeholder {
   opacity: 0.5;
 }
-
-@keyframes bounce-dot {
-  0%, 60%, 100% { transform: translateY(0); }
-  30% { transform: translateY(-4px); }
-}
-
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.25s ease-out;
-}
-
-.typing-dot {
-  animation: bounce-dot 1.2s ease-in-out infinite;
-}
-.typing-dot:nth-child(2) { animation-delay: 0.15s; }
-.typing-dot:nth-child(3) { animation-delay: 0.3s; }
-
-.messages-scroll::-webkit-scrollbar { display: none; }
-.messages-scroll { -ms-overflow-style: none; scrollbar-width: none; }
